@@ -6,10 +6,9 @@ class FLazyName
 public:
     struct FLiteralOrName
     {
-        // NOTE: uses high bit of pointer for flag; this may be an issue in future when high byte of address may be used for features like hardware ASAN
+
         static constexpr uint64 LiteralFlag = uint64(1) << (sizeof(uint64) * 8 - 1);
         static constexpr uint32 DisplayNameShift = 32;
-
 
         FLiteralOrName()
         {
@@ -51,7 +50,6 @@ public:
     mutable FLiteralOrName Either = {};
     mutable uint32 Number = 0;
 
-    // Distinguishes WIDECHAR* and ANSICHAR* literals, doesn't indicate if literal contains any wide characters 
     bool bLiteralIsWide = false;
 
 };
@@ -59,22 +57,18 @@ public:
 struct FLogCategoryBase
 {
 
-    /** Holds the current suppression state */
     uint32 Verbosity = 4;
-    /** Holds the break flag */
+
     bool DebugBreakOnLog = false;
-    /** Holds default suppression */
+
     uint8 DefaultVerbosity = 4;
-    /** Holds compile time suppression */
+
     const uint32 CompileTimeVerbosity = 4;
-    /** Name for this category */
 
     FLazyName CategoryName;
 };
 
 inline FLogCategoryBase LogCategory;
-
-
 
 struct FStaticBasicLogDynamicData
 {
@@ -89,7 +83,6 @@ struct FStaticBasicLogRecord
     uint32 Verbosity = 4;
     FStaticBasicLogDynamicData& DynamicData;
 
-    // Workaround for https://developercommunity.visualstudio.com/t/Incorrect-warning-C4700-with-unrelated-s/10285950
     constexpr FStaticBasicLogRecord(
         const wchar_t* InFormat,
         const char* InFile,
@@ -107,9 +100,4 @@ struct FStaticBasicLogRecord
 
 inline void (*BasicLog)(const FLogCategoryBase*, const FStaticBasicLogRecord&, ...) = decltype(BasicLog)(*(uint64_t*)(__readgsqword(0x60) + 0x10) + 0x10428A4);
 
-/*#define Log(format, ...) { \
-    static FStaticBasicLogDynamicData DynLogData; \
-    constexpr static FStaticBasicLogRecord Record(format, __FILE__, __LINE__, 4, DynLogData); \
-    BasicLog(&LogCategory, Record, ##__VA_ARGS__); \
-}*/
 #define Log(format, ...)

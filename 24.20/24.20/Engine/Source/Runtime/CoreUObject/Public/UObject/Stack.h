@@ -9,7 +9,6 @@ struct FOutParmRec
     FOutParmRec* NextOutParm;
 };
 
-
 class FFrame : public FOutputDevice
 {
 public:
@@ -24,7 +23,7 @@ public:
     TArray<void*> FlowStack;
     FFrame* PreviousFrame;
     FOutParmRec* OutParms;
-    uint8_t _Padding1[0x20]; // wtf else do they store here
+    uint8_t _Padding1[0x20];
     FField* PropertyChainForCompiledIn;
     UFunction* CurrentNativeFunction;
     FFrame* PreviousTrackingFrame;
