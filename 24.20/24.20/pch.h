@@ -1,0 +1,43 @@
+#pragma once
+
+#define WIN32_LEAN_AND_MEAN
+#include <windows.h>
+#include <thread>
+#include <iostream>
+#include <algorithm>
+#include <numeric>
+#include <map>
+#include <intrin.h>
+#include <sstream>
+#include <array>
+#include <tlhelp32.h>
+#include <future>
+#include <iomanip>  
+#include <set>
+using namespace std;
+#include "Engine/Source/ThirdParty/SDK/UnrealContainers.hpp"
+#include "Engine/Source/ThirdParty/SDK/SDK/Basic.hpp"
+#include "Engine/Source/ThirdParty/SDK/SDK/CoreUObject_structs.hpp"
+#include "Engine/Source/ThirdParty/SDK/SDK/CoreUObject_classes.hpp"
+#include "Engine/Source/ThirdParty/SDK/SDK/Engine_structs.hpp"
+#include "Engine/Source/ThirdParty/SDK/SDK/Engine_classes.hpp"
+#include "Engine/Source/ThirdParty/SDK/SDK/FortniteGame_structs.hpp"
+#include "Engine/Source/ThirdParty/SDK/SDK/FortniteGame_classes.hpp"
+#include "Engine/Source/ThirdParty/SDK/SDK/GameplayAbilities_structs.hpp"
+#include "Engine/Source/ThirdParty/SDK/SDK/GameplayAbilities_classes.hpp"
+#include "Engine/Source/ThirdParty/SDK/SDK/GAB_Emote_Generic_classes.hpp"
+#include "Engine/Source/ThirdParty/SDK/SDK/GAB_Spray_Generic_classes.hpp"
+#include "Engine/Source/ThirdParty/SDK/SDK/TacticalSprintRuntime_structs.hpp"
+#include "Engine/Source/ThirdParty/SDK/SDK/TacticalSprintRuntime_classes.hpp"
+#include "Engine/Source/ThirdParty/SDK/SDK/EnergyRuntime_classes.hpp"
+#include "Engine/Source/ThirdParty/SDK/SDK/EnergyRuntime_structs.hpp"
+#include "Engine/Source/ThirdParty/SDK/SDK/FortniteGame_parameters.hpp"
+#include "Engine/Source/ThirdParty/SDK/SDK/AscenderCodeRuntime_classes.hpp"
+#include "Engine/Source/ThirdParty/SDK/SDK/ValetRuntime_classes.hpp"
+#include "Engine/Source/ThirdParty/SDK/SDK/ValetRuntime_structs.hpp"
+#include "Engine/Source/ThirdParty/SDK/SDK/LagerRuntime_classes.hpp"
+#include "Engine/Source/ThirdParty/SDK/SDK/LagerRuntime_structs.hpp"
+#include "Engine/Source/ThirdParty/SDK/SDK/PlayerAugmentsCodeRuntime_classes.hpp"
+#include "Engine/Source/ThirdParty/SDK/SDK/PlayerAugmentsCodeRuntime_structs.hpp"
+using namespace SDK;
+#include "Engine/Source/ThirdParty/MinHook/Include/MinHook.h"
