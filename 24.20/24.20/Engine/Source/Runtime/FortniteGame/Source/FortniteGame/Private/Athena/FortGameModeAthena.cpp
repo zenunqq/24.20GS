@@ -253,7 +253,7 @@ bool FortGameModeAthena::PrepareWorld(AFortGameModeAthena* GameMode, AFortGameSt
 
 	FlattenSafeZoneDamage(GameState);
 
-	SetConsoleTitleA("Sarah 24.20: Ready");
+	SetConsoleTitleA("skidding 24.20: Ready");
 	GameMode->bWorldIsReady = true;
 	return true;
 }

@@ -9,7 +9,7 @@ void Main()
     AllocConsole();
     FILE* f;
     freopen_s(&f, "CONOUT$", "w", stdout);
-    SetConsoleTitleA("Sarah 24.20: Setting up");
+    SetConsoleTitleA("skidding 24.20: Setting up");
     LogCategory.CategoryName.Either = FLazyName::FLiteralOrName(L"LogGameserver");
     LogCategory.CategoryName.bLiteralIsWide = true;
     auto FrontEndGameMode = (AFortGameMode*)UWorld::GetWorld()->AuthorityGameMode;
